@@ -51,3 +51,12 @@ public class Two{
 //Input 1: I am a Computer Science Engineer 
 //Input 2: 10
 //Output : p
+
+
+public class Three{
+  public static void main(String[] args){
+    Scanner scan = new scanner(System.in);
+    String line = scan.nextLine();
+    
+  }
+}
