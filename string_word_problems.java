@@ -53,10 +53,36 @@ public class Two{
 //Output : p
 
 
+
+/*Check if string is Palindrome*/
+
 public class Three{
   public static void main(String[] args){
-    Scanner scan = new scanner(System.in);
-    String line = scan.nextLine();
-    
+    Scanner scan = new Scanner(System.in);
+    String sentence = scan.nextLine();
+
+    int left = 0;
+    int right = sentence.length() - 1;
+    boolean isPalindrome = true;
+
+    while(left <= right){
+      if(sentence.charAt(left) != sentence.charAt(right)){
+        isPalindrome = false;
+        break;
+      }
+      left++;
+      right--;
+    }
+    if(isPalindrome){
+      System.out.print("The string " + sentence + " is a Palindrome");
+    }
+    else{
+      System.out.print("The string " + sentence + " is not a Palindrome");
+    }
+    scan.close();
   }
 }
+
+
+//Input: rotator
+//Output: The string rotator is a Palindrome
