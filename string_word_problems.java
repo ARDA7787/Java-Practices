@@ -1,27 +1,30 @@
+import java.util.*;
+
 
 /*Reverse every word in the string, not entire string*/
 
-import java.util.*;
-
-public class One{  //If declaring any other public class, declare in a seperare java file
-  public static String reversed(String str){ //Here it is public static string as this program returns a string
-    String words = str.split("\\s+"); //Splitting words at every white space
+public class One {  
+  public static void main(String[] args){ //Here it is public static void as void doesnt return anything like this function
+    //Scanner for input
+    Scanner scan = new Scanner(System.in);
+    String line = scan.nextLine(); //To scan any line of string
+    
+    String words[] = line.split("\\s+"); //Splitting words at every white space
     StringBuilder result = new StringBuilder(); //StringBuilder has in built functions like .reverse(), .append(), etc.
-    for(int i = 0; i < words.lenght(); i++){ //for every word in the string 
-      if(i<0){
-        results.append(" ");
+    
+    for(int i = 0; i < words.length; i++){ //for every word in the string
+      if(i > 0){
+        result.append(" "); //Append space between words except before the first word
       }
       result.append(new StringBuilder(words[i]).reverse()); //reverse and append to new string called results
     }
-    return result.toString();
-  }
-  public static void main(String[] args){ //Here it is public static void as void doesnt return anything like this function
-    Scanner scan = new Scanner(System.in);
-    String line = scan.nextLine(); //To scan any line of string
-    System.out.println(result);
-    scanner.close();
+    
+    System.out.println(result.toString()); //Output the final result
+    
+    scan.close(); //Close the scanner
   }
 }
+
 
 //Input: My name is Aryan and yours is ??
 //Output: yM eman si nayrA dna sruoy si ??
@@ -60,20 +63,20 @@ public class Three{
   public static void main(String[] args){
     Scanner scan = new Scanner(System.in);
     String sentence = scan.nextLine();
+    //Declare 3 variables - 2 pointer variable and one boolean
+    int left = 0;  //To start reading from the left of the line
+    int right = sentence.length() - 1; //To start reading from the right (minus 1 because the pointer position starts from zero)
+    boolean isPalindrome = true; 
 
-    int left = 0;
-    int right = sentence.length() - 1;
-    boolean isPalindrome = true;
-
-    while(left <= right){
-      if(sentence.charAt(left) != sentence.charAt(right)){
+    while(left <= right){ //The program will only run till the pointer variables meet so only till half the string
+      if(sentence.charAt(left) != sentence.charAt(right)){ //Take a negetive approach as we can use isPalindrome to print string easily
         isPalindrome = false;
-        break;
+        break; //If statement without an else so we break
       }
-      left++;
+      left++; 
       right--;
     }
-    if(isPalindrome){
+    if(isPalindrome){ //Default isPalindrome value which was declared as true at the start
       System.out.print("The string " + sentence + " is a Palindrome");
     }
     else{
@@ -86,3 +89,6 @@ public class Three{
 
 //Input: rotator
 //Output: The string rotator is a Palindrome
+
+
+/*
