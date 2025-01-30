@@ -74,8 +74,8 @@ public class Three{
         isPalindrome = false;
         break; //If statement without an else so we break
       }
-      left++; 
-      right--;
+      left++; //Move left pointer towrds right 
+      right--; //Move right pointer towards left
     }
     if(isPalindrome){ //Default isPalindrome value which was declared as true at the start
       System.out.print("The string " + sentence + " is a Palindrome");
