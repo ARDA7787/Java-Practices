@@ -90,6 +90,3 @@ public class Three{
 
 //Input: rotator
 //Output: The string rotator is a Palindrome
-
-
-/*
